@@ -1,5 +1,9 @@
-.product-item {
+body{
 	background-color: gray;
+}
+
+.product-item {
+	background-color: white;
 	display: inline-block;
 	height: 25px;
 	padding: 5px;
@@ -14,4 +18,36 @@
 	height: 20px;
 	width: 20px;
 	text-align: center;
+}
+
+.article1 {
+	background-color: white;
+	border-radius: 10px;
+
+	padding: 5px;
+	height: 100px;
+	width: 60%;
+}
+
+.input {
+	display: inline-block;
+	border-radius: 5px;
+
+	padding: 5px;
+	height: 25px;
+	width: 100%;
+}
+
+.text-field {
+	height: 25px;
+	width: 80%;
+}
+
+.button {
+	background-color: blue;
+
+	width: 20%;
+	height: 25px;
+
+	color: white;
 }
