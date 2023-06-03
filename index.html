@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-	<head lang="uk">
+<html lang="uk">
+	<head>
 		<meta charset="UTF-8">
 		<title>My Page</title>
 
@@ -10,8 +10,53 @@
 	<body>
 		<article class="article1">
 			<article class="input">
-				<input class="text-field" type="text">
-				<input class="button" type="button" value="Додати">
+				<input class="text-field" type="text" placeholder="Назва товару">
+				<button class="add-button">Додати</button>
+			</article>
+
+			<hr class="line">
+
+			<article class="goods">
+				<div class="good-name-line">Помідори</div>
+				<section class="button-panel">
+					<button class="button-hidden">-</button>
+					<div class="counter">2</div>
+					<button class="button-hidden">+</button>
+				</section>
+				<section class="bought-panel">
+					<button class="delete-button" style="display: none">x</button>
+					<div class="bought">Не куплено</div>
+				</section>
+			</article>
+
+			<hr class="line">
+
+			<article class="goods">
+				<div class="good-name">Печиво</div>
+				<section class="button-panel">
+					<button class="minus-button">-</button>
+					<div class="counter">2</div>
+					<button class="plus-button">+</button>
+				</section>
+				<section class="bought-panel">
+					<button class="delete-button">x</button>
+					<div class="bought">Куплено</div>
+				</section>
+			</article>
+
+			<hr class="line">
+
+			<article class="goods">
+				<input type="text" value="Сир" class="input-text">
+				<section class="button-panel">
+					<button class="minus-button-disabled">-</button>
+					<div class="counter">1</div>
+					<button class="plus-button">+</button>
+				</section>
+				<section class="bought-panel">
+					<button class="delete-button">x</button>
+					<div class="bought">Куплено</div>
+				</section>
 			</article>
 		</article>
 		<!--<span class="product-item">
