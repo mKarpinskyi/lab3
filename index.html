@@ -3,19 +3,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>My Page</title>
-
-
 		<link rel="stylesheet" type="text/css" href="main.css" />
 	</head>
 	<body>
+		<!--first panel-->
 		<article class="article1">
+			<!--input line-->
 			<article class="input">
 				<input class="text-field" type="text" placeholder="Назва товару">
-				<button class="add-button">Додати</button>
+				<button class="add-button" data-tooltip="Додати товар">Додати</button>
 			</article>
-
+			<!--first good-->
 			<hr class="line">
-
 			<article class="goods">
 				<div class="good-name-line">Помідори</div>
 				<section class="button-panel">
@@ -24,44 +23,73 @@
 					<button class="button-hidden">+</button>
 				</section>
 				<section class="bought-panel">
-					<button class="delete-button" style="display: none">x</button>
-					<div class="bought">Не куплено</div>
+					<button class="delete-button" data-tooltip="Видалити товар" style="display: none">x</button>
+					<button class="bought">Не куплено</button>
 				</section>
 			</article>
-
+			<!--second good-->
 			<hr class="line">
-
 			<article class="goods">
 				<div class="good-name">Печиво</div>
 				<section class="button-panel">
-					<button class="minus-button">-</button>
+					<button class="minus-button" data-tooltip="Відняти одиницю">-</button>
 					<div class="counter">2</div>
-					<button class="plus-button">+</button>
+					<button class="plus-button" data-tooltip="Додати одиницю">+</button>
 				</section>
 				<section class="bought-panel">
-					<button class="delete-button">x</button>
-					<div class="bought">Куплено</div>
+					<button class="delete-button" data-tooltip="Видалити товар">x</button>
+					<button class="bought">Куплено</button>
 				</section>
 			</article>
-
+			<!--third good-->
 			<hr class="line">
-
 			<article class="goods">
 				<input type="text" value="Сир" class="input-text">
 				<section class="button-panel">
 					<button class="minus-button-disabled">-</button>
 					<div class="counter">1</div>
-					<button class="plus-button">+</button>
+					<button class="plus-button" data-tooltip="Додати одиницю">+</button>
 				</section>
 				<section class="bought-panel">
-					<button class="delete-button">x</button>
-					<div class="bought">Куплено</div>
+					<button class="delete-button" data-tooltip="Видалити товар">x</button>
+					<button class="bought">Куплено</button>
 				</section>
 			</article>
 		</article>
-		<!--<span class="product-item">
-			Apple
-			<span class="amount">4</span>
-		</span>-->
+		<!--second panel-->
+		<article class="article2">
+			<!--Залишилося-->
+			<h1 class="h1-style">Залишилося</h1>
+			<hr class="line">
+			<!--Залишилося товари-->
+			<section class="remain-panel">
+				<span class="product-item">
+					Печиво
+					<span class="amount">2</span>
+				</span>
+				<span class="product-item">
+					Cир
+					<span class="amount">1</span>
+				</span>
+			</section>
+			<!--Куплено-->
+			<hr class="line">
+			<h1 class="h1-style">Куплено</h1>
+			<hr class="line">
+			<!--Куплено товари-->
+			<section class="remain-panel">
+				<span class="product-item" style="text-decoration: line-through">
+					Помідори
+					<span class="amount" style="text-decoration: line-through">2</span>
+				</span>
+			</section>
+		</article>
+		<article class="badge">
+			<section class="badge-top">Buy List</section>
+			<section class="badge-bottom">
+				Created by:
+				<div style="font: small-caps bold 120% sans-serif;">Karpinskyi Max</div>
+			</section>
+		</article>
 	</body>
 </html>

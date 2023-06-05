@@ -1,23 +1,30 @@
 body{
+	display: flex;
 	background-color: gray;
 }
 
 .product-item {
-	background-color: white;
+	background-color: #e7e7e7;
 	display: inline-block;
-	height: 25px;
+	height: 30px;
 	padding: 5px;
 	border-radius: 5px;
 }
 
 .amount {
-	background-color: yellow;
-	border-radius: 10px;
+	background-color: orange;
+	border-radius: 13px;
+	color: white;
 	
 	display: inline-block;
-	height: 20px;
-	width: 20px;
+	height: 26px;
+	width: 26px;
 	text-align: center;
+	line-height: 24px;
+}
+
+button {
+	cursor: pointer;
 }
 
 .article1 {
@@ -26,6 +33,7 @@ body{
 	padding-top: 15px;
 
 	height: 280px;
+	min-width: 490px;
 	width: 60%;
 }
 
@@ -57,7 +65,6 @@ body{
 .add-button {
 	background-color: #0085dd;
 	box-sizing: border-box;
-	cursor: pointer;
 
 	width: 20%;
 	height: 100%;
@@ -68,6 +75,29 @@ body{
 	border-bottom-right-radius: 5px;
 
 	font: small-caps bold 120% sans-serif;
+	position: relative;
+}
+
+.add-button::before, .add-button::after{
+	--scale:0;
+	position: absolute;
+	top: 52px;
+	left: 50%;
+	transform: translateX(-50%) scale(var(--scale));
+	transition: 150ms transform;
+	transform-origin: top center;
+
+	content: attr(data-tooltip);
+	color: white;
+	text-align: center;
+	width: 150px;
+	background-color: purple;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.add-button:hover::before {
+	--scale: 0.7;
 }
 
 .line {
@@ -95,7 +125,6 @@ body{
 	width: 40px;
 	height: 40px;
 	border-radius: 20px;
-	cursor: pointer;
 	margin-left: 5px;
 	margin-right: 5px;
 
@@ -109,6 +138,7 @@ body{
 }
 .minus-button-disabled {
 	background-color: rgba(255, 0, 0, 0.30);
+	cursor: default;
 }
 
 .button-panel{
@@ -123,12 +153,56 @@ body{
 .plus-button {
 	background-color: #00bd00;
 	box-shadow: inset 0 -3px #008300;
+	position: relative;
 }
+.plus-button::before{
+	--scale:0;
+	position: absolute;
+	top: -10%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-100%) scale(var(--scale));
+	transition: 150ms transform;
+	transform-origin: bottom center;
+
+	content: attr(data-tooltip);
+	color: white;
+	text-align: center;
+	width: max-content;
+	background-color: purple;
+	padding: 10px;
+	border-radius: 5px;
+}
+.plus-button:hover::before {
+	--scale: 0.4;
+}
+
 .minus-button {
 	background-color: red;
 	box-shadow: inset 0 -3px #830000;
 	padding-bottom: 10px;
+	position: relative;
 }
+.minus-button::before{
+	--scale:0;
+	position: absolute;
+	top: -10%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-100%) scale(var(--scale));
+	transition: 150ms transform;
+	transform-origin: bottom center;
+
+	content: attr(data-tooltip);
+	color: white;
+	text-align: center;
+	width: max-content;
+	background-color: purple;
+	padding: 10px;
+	border-radius: 5px;
+}
+.minus-button:hover::before {
+	--scale: 0.4;
+}
+
 .counter {
 	width: 30px;
 	height: 30px;
@@ -164,11 +238,11 @@ body{
 	box-sizing: border-box;
 	width: 150px;
 	height: 40px;
+	position: relative;
 }
 
 .delete-button {
 	margin-left: 5px;
-	cursor: pointer;
 
 	background-color: red;
 	width: 40px;
@@ -182,6 +256,26 @@ body{
 	font: small-caps bold 100% Calibri;
 	line-height: 35px;
 }
+.delete-button::before{
+	--scale:0;
+	position: absolute;
+	top: -10%;
+	left: 87%;
+	transform: translateX(-50%) translateY(-100%) scale(var(--scale));
+	transition: 150ms transform;
+	transform-origin: bottom center;
+
+	content: attr(data-tooltip);
+	color: white;
+	text-align: center;
+	width: max-content;
+	background-color: purple;
+	padding: 10px;
+	border-radius: 5px;
+}
+.delete-button:hover::before {
+	--scale: 0.5;
+}
 
 .input-text {
 	box-sizing: border-box;
@@ -191,4 +285,103 @@ body{
 	outline: none;
 	height: 30px;
 	width: 150px;
+}
+
+.article2 {
+	box-sizing: border-box;
+	background-color: white;
+	border-radius: 10px;
+	margin-left: 15px;
+	padding-top: 5px;
+
+	height: 310px;
+	min-width: 245px;
+	max-width: 550px;
+	width: 40%;
+}
+
+.h1-style {
+	font: small-caps bold 160% sans-serif;
+	padding-left: 25px;
+}
+
+.remain-panel {
+	margin-left: 5px;
+	padding-left: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: grey;
+	font: small-caps bold 100% Calibri;
+	line-height: 30px;
+}
+
+.badge {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	bottom: -65px;
+
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+	background-color: purple;
+	transition: 0.8s;
+}
+
+.badge:hover {
+	cursor: pointer;
+	background-color: blue;
+	translate: 0 -55px;
+}
+
+.badge-top {
+	margin-top: 5px;
+	width: 100%;
+	height: 40%;
+
+	color: white;
+	font: small-caps bold 120% sans-serif;
+	text-align: center;
+}
+
+.badge-bottom {
+	box-sizing: border-box;
+	padding-left: 11px;
+	width: 100%;
+	height: 60%;
+	color: white;
+	font: small-caps bold 65% sans-serif;
+}
+
+@media print {
+	.badge-top {
+		display: none;
+	}
+	.badge-bottom {
+		color: black;
+	}
+	.badge {
+		translate: 0 -5px;
+		border: 3px solid purple;
+		background-color: white;
+		padding: 10px;
+	}
+}
+
+@media (max-width: 770px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.article2 {
+		margin-top: 20px;
+		margin-left: 0;
+		width:100%;
+		min-width: 490px;
+		max-width: none;
+	}
+	.article1 {
+		width: 100%;
+	}
 }
